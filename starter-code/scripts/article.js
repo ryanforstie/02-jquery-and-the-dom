@@ -19,10 +19,17 @@ Article.prototype.toHtml = function() {
   However, in our modules.css stylesheet, we gave all elements
   with a class of template a display of none. Let's make
   sure we're not accidentally hiding our cloned article! */
-  $('article').removeClass('template');
+  $newArticle.removeClass('template');
 
   if (!this.publishedOn) $newArticle.addClass('draft');
   $newArticle.data('category', this.category);
+
+  $newArticle.find('.byline a').html(this.author).attr('href', this.authorUrl);
+
+  $newArticle.find('.byline a');
+  $newArticle.find('header h1').html(this.title);
+  $newArticle.find('.byline time').html(this.publishedOn);
+  $newArticle.find('.article-body').html(this.body);
 
   /* TODO: Now use jQuery traversal and setter methods to fill in the rest
   of the current template clone with properties from this particular Article instance.
