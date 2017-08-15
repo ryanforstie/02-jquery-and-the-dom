@@ -15,7 +15,7 @@ function Article (rawDataObj) {
 
 Article.prototype.toHtml = function() {
   var $newArticle = $('article.template').clone();
-  /* TODO: This cloned article still has a class of template.
+  /* TODO DONE: This cloned article still has a class of template.
   However, in our modules.css stylesheet, we gave all elements
   with a class of template a display of none. Let's make
   sure we're not accidentally hiding our cloned article! */
@@ -31,7 +31,7 @@ Article.prototype.toHtml = function() {
   $newArticle.find('.byline time').html(this.publishedOn);
   $newArticle.find('.article-body').html(this.body);
 
-  /* TODO: Now use jQuery traversal and setter methods to fill in the rest
+  /* TODO DONE: Now use jQuery traversal and setter methods to fill in the rest
   of the current template clone with properties from this particular Article instance.
   We need to fill in:
     1. author name,
